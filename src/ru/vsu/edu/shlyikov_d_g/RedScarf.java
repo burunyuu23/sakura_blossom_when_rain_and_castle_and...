@@ -4,20 +4,20 @@ import java.awt.*;
 
 public class RedScarf {
 
-    private static final Color redScarf = new Color(149, 36, 36);
+    private final Color redScarf = new Color(149, 36, 36);
 
-    private static Polygon drawRedScarf(int startX, int startY,
+    private Polygon drawRedScarf(int startX, int startY,
                                         double multiplyX)
     {
         return drawRedScarf(startX,startY,multiplyX,1);
     }
 
-    private static Polygon drawRedScarf(int startX, int startY)
+    private Polygon drawRedScarf(int startX, int startY)
     {
         return drawRedScarf(startX,startY,1,1);
     }
 
-    private static Polygon drawRedScarf(int startX, int startY,
+    private Polygon drawRedScarf(int startX, int startY,
                                         double multiplyX, double multiplyY){
         int[] xRedScarf1 = {startX, (int) (startX+4*multiplyX),
                 (int) (startX+8*multiplyX), (int) (startX+16*multiplyX),
@@ -39,7 +39,7 @@ public class RedScarf {
         return new Polygon(xRedScarf1, yRedScarf1, xRedScarf1.length);
     }
 
-    public static void drawRedScarfBack(Graphics2D g){
+    public void drawRedScarfBack(Graphics2D g){
         g.setColor(redScarf);
 
         g.setStroke(new BasicStroke(1));
@@ -67,7 +67,7 @@ public class RedScarf {
         g.fillPolygon(drawRedScarfBack(1830, 600));
     }
 
-    private static Polygon drawRedScarfBack(int startX, int startY){
+    private Polygon drawRedScarfBack(int startX, int startY){
         int[] xRedScarf1 = {startX, startX+11, startX-31, startX-38,
                 startX-47, startX-54, startX-57, startX-63, startX-56,
                 startX-46};
@@ -79,7 +79,7 @@ public class RedScarf {
     }
 
 
-    public static void draw(Graphics2D g){
+    public void draw(Graphics2D g){
         Polygon p1 = drawRedScarf(1721,510);
         Polygon p2 = drawRedScarf(1769,490);
         Polygon p3 = drawRedScarf(1797,469);

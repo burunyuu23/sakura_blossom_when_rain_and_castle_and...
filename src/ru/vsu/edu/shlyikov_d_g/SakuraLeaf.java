@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class SakuraLeaf {
 
-    private static Polygon drawLeaf(int startX, int startY){
+    private Polygon drawLeaf(int startX, int startY){
         int[] xSakuraLeaf = {startX, startX+4,
                 startX+32, startX+34, startX+39,
                 startX+41, startX+39, startX+36, startX+12,
@@ -19,7 +19,7 @@ public class SakuraLeaf {
 
     }
 
-    public static void drawLeafs(Graphics2D g){
+    public void drawLeafs(Graphics2D g){
         Color sakuraLeafColor = new Color(241, 91, 243);
 
         g.setColor(sakuraLeafColor);

@@ -8,6 +8,7 @@ public class Window extends JFrame {
 
     public Window() throws HeadlessException {
         dp = new DrawPanel();
+        setResizable(false);
         this.add(dp);
     }
 }

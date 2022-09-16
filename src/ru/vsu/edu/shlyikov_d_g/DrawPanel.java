@@ -12,9 +12,16 @@ public class DrawPanel extends JPanel {
         super.paint(gr);
         Graphics2D g = (Graphics2D) gr;
 
-        RedScarf.drawRedScarfBack(g);
-        Trees.draw(g);
-        SakuraLeaf.drawLeafs(g);
-        RedScarf.draw(g);
+        Ground ground = new Ground();
+        RedScarf redScarf = new RedScarf();
+        Trees trees = new Trees();
+        SakuraLeaf sakuraLeaf = new SakuraLeaf();
+
+
+        ground.draw(g);
+        redScarf.drawRedScarfBack(g);
+        trees.draw(g);
+        sakuraLeaf.drawLeafs(g);
+        redScarf.draw(g);
     }
 }

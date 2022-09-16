@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Trees {
 
-    public static void draw(Graphics2D g){
+    public void draw(Graphics2D g){
         int[] xTree1 = {820, 835, 871, 934, 1115, 1143, 1165,
                 1183, 1189, 1073, 1029, 1146, 1161, 1200, 1229, 1261,
                 1272, 1335, 1306, 1279, 1268, 1252, 1276, 1301, 1330,
