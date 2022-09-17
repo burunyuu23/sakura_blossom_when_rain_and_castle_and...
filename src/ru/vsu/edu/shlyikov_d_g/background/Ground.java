@@ -1,4 +1,4 @@
-package ru.vsu.edu.shlyikov_d_g;
+package ru.vsu.edu.shlyikov_d_g.background;
 
 import java.awt.*;
 import java.awt.geom.Path2D;
@@ -25,8 +25,8 @@ public class Ground extends Path2D.Float {
         curveTo(0,752,397,703,1200,808);
         lineTo(1386,858);
         lineTo(1000,858);
-        curveTo(1000,808,397,763,41,818);
-        lineTo(0,858);
+        curveTo(1000,808,397,763,41,799);
+        lineTo(0,803);
 
         closePath();
 
