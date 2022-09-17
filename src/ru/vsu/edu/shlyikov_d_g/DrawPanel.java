@@ -16,8 +16,11 @@ public class DrawPanel extends JPanel {
         RedScarf redScarf = new RedScarf();
         Trees trees = new Trees();
         SakuraLeaf sakuraLeaf = new SakuraLeaf();
+        Castle castle = new Castle();
+        Sky sky = new Sky();
 
-
+        sky.draw(g);
+        castle.draw(g);
         ground.draw(g);
         redScarf.drawRedScarfBack(g);
         trees.draw(g);
