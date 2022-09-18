@@ -42,8 +42,8 @@ public class DrawPanel extends JPanel implements ActionListener {
         trees.draw(g);
         torii.draw(g);
         redScarf.draw(g); //anim
-        rain.draw(g); //anim
         sakuraLeaf.draw(g); //anim
+        rain.draw(g); //anim
     }
 
     @Override

@@ -74,7 +74,7 @@ public class Lightning extends Path2D.Float {
         counter++;
         if (counter > maxCounter){
             counter = 0;
-            maxCounter = (int) (Math.random()*85+200);
+            maxCounter = (int) (Math.random()*99+800);
             mainPath = light();
             light = true;
         }
