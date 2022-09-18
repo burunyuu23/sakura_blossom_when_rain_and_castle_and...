@@ -33,7 +33,12 @@ public class Puddle {
     }
 
     public void draw(Graphics2D g){
-        g.setColor(puddle);
+        if (Lightning.light) {
+            g.setColor(puddle.darker().darker());
+        }
+        else{
+            g.setColor(puddle);
+        }
         g.fillOval(x,y,w,h);
     }
 }

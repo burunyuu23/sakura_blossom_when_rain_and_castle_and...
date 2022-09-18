@@ -1,6 +1,7 @@
 package ru.vsu.edu.shlyikov_d_g;
 
 import ru.vsu.edu.shlyikov_d_g.background.Castle;
+import ru.vsu.edu.shlyikov_d_g.foreground.animated_content.rain.Lightning;
 import ru.vsu.edu.shlyikov_d_g.foreground.static_content.Ground;
 import ru.vsu.edu.shlyikov_d_g.foreground.animated_content.rain.Rain;
 import ru.vsu.edu.shlyikov_d_g.background.Sky;
@@ -27,6 +28,7 @@ public class DrawPanel extends JPanel implements ActionListener {
     Sky sky = new Sky();
     Torii torii = new Torii();
     Rain rain = new Rain();
+    Lightning lightning = new Lightning();
     Timer t = new Timer(15, this); //15
 
     @Override
@@ -34,9 +36,9 @@ public class DrawPanel extends JPanel implements ActionListener {
         super.paint(gr);
         Graphics2D g = (Graphics2D) gr;
         sky.draw(g);
+        lightning.draw(g);
         castle.draw(g);
         ground.draw(g);
-        redScarf.drawRedScarfBack(g);
         trees.draw(g);
         torii.draw(g);
         redScarf.draw(g); //anim

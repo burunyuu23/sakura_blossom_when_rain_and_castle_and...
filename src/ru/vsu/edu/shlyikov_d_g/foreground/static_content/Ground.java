@@ -1,5 +1,7 @@
 package ru.vsu.edu.shlyikov_d_g.foreground.static_content;
 
+import ru.vsu.edu.shlyikov_d_g.foreground.animated_content.rain.Lightning;
+
 import java.awt.*;
 import java.awt.geom.Path2D;
 
@@ -37,11 +39,21 @@ public class Ground extends Path2D.Float {
         Color ground = new Color(77,30,91);
         Color road = new Color(138,138,138);
 
-        g.setColor(ground);
+        if (Lightning.light) {
+            g.setColor(ground.darker().darker());
+        }
+        else{
+            g.setColor(ground);
+        }
         g.fill(ground());
         reset();
 
-        g.setColor(road);
+        if (Lightning.light) {
+            g.setColor(road.darker().darker());
+        }
+        else{
+            g.setColor(road);
+        }
         g.fill(road());
     }
 

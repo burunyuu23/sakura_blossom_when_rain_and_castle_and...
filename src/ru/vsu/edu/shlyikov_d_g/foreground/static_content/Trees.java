@@ -1,5 +1,7 @@
 package ru.vsu.edu.shlyikov_d_g.foreground.static_content;
 
+import ru.vsu.edu.shlyikov_d_g.foreground.animated_content.rain.Lightning;
+
 import java.awt.*;
 
 public class Trees {
@@ -51,7 +53,12 @@ public class Trees {
         Polygon tree1 = new Polygon(xTree1, yTree1, xTree1.length);
         Polygon tree2 = new Polygon(xTree2, yTree2, xTree2.length);
         Color treeColor = new Color(104, 63, 21);
-        g.setColor(treeColor);
+        if (Lightning.light) {
+            g.setColor(treeColor.darker().darker());
+        }
+        else {
+            g.setColor(treeColor);
+        }
         g.fillPolygon(tree1);
         g.fillPolygon(tree2);
     }

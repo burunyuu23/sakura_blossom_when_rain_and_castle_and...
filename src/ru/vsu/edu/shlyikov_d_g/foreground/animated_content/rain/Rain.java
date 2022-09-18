@@ -22,7 +22,12 @@ public class Rain {
     }
 
     private void rain(Graphics2D g, List<Raindrop> rs) {
-        g.setColor(rainC);
+        if (Lightning.light) {
+            g.setColor(rainC.darker().darker());
+        }
+        else{
+            g.setColor(rainC);
+        }
         for (Raindrop r : rs) {
             g.drawLine(r.getX(), r.getY(), r.getNewX(), r.getNewY());
             r.move();

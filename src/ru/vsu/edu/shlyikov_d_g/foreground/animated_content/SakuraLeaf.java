@@ -1,5 +1,7 @@
 package ru.vsu.edu.shlyikov_d_g.foreground.animated_content;
 
+import ru.vsu.edu.shlyikov_d_g.foreground.animated_content.rain.Lightning;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +80,12 @@ public class SakuraLeaf {
     }
 
     public void draw(Graphics2D g){
-        g.setColor(sakuraLeafColor);
+        if (Lightning.light) {
+            g.setColor(sakuraLeafColor.darker().darker());
+        }
+        else{
+            g.setColor(sakuraLeafColor);
+        }
 
         if (!start){
             start = true;

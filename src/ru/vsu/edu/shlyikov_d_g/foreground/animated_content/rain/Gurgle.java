@@ -31,7 +31,12 @@ public class Gurgle {
 
     public void draw(Graphics2D g){
         Color gurgleC = new Color(red,blue,green);
-        g.setColor(gurgleC);
+        if (Lightning.light) {
+            g.setColor(gurgleC.darker().darker());
+        }
+        else{
+            g.setColor(gurgleC);
+        }
         g.drawLine(x, y, x, y-h);
         g.drawOval(x-(36-w)/2,y, 36-w,4);
         move();

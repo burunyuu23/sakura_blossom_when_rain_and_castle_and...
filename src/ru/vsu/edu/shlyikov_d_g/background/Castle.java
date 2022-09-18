@@ -1,5 +1,7 @@
 package ru.vsu.edu.shlyikov_d_g.background;
 
+import ru.vsu.edu.shlyikov_d_g.foreground.animated_content.rain.Lightning;
+
 import java.awt.*;
 import java.awt.geom.Path2D;
 
@@ -10,10 +12,20 @@ public class Castle extends Path2D.Float{
 
     private void ladderStep(Graphics2D g, int x, int y, int width){
         // 710, 448
-        g.setColor(ladderStep1);
+        if (Lightning.light) {
+            g.setColor(ladderStep1.darker().darker());
+        }
+        else {
+            g.setColor(ladderStep1);
+        }
         g.fillRect(x,y,-width,-3);
         g.fillRect(x,y,width,-3);
-        g.setColor(ladderStep2);
+        if (Lightning.light) {
+            g.setColor(ladderStep2.darker().darker());
+        }
+        else {
+            g.setColor(ladderStep2);
+        }
         g.fillRect(x,y-3,width,-1);
         g.fillRect(x,y-3,-width,-1);
     }
@@ -22,11 +34,20 @@ public class Castle extends Path2D.Float{
                       Color flagSign, Color flagBackSign) {
         g.setFont(new Font("Algerian", Font.PLAIN, size));
 
-        g.setColor(flagBackSign);
+        if (Lightning.light) {
+            g.setColor(flagBackSign.darker().darker());
+        }
+        else {
+            g.setColor(flagBackSign);
+        }
         g.fillOval(x,y,w,h);
         // 562, 387, 35, 35
-
-        g.setColor(flagSign);
+        if (Lightning.light) {
+            g.setColor(flagSign.darker().darker());
+        }
+        else {
+            g.setColor(flagSign);
+        }
         g.drawString("¤",x2, y2);
     }
 
@@ -39,16 +60,31 @@ public class Castle extends Path2D.Float{
         Color floorAroundLadder = new Color(106,106,115);
         Color flagAroundLadder = new Color(101,103,121);
 
-        g.setColor(wallAroundLadder);
+        if (Lightning.light) {
+            g.setColor(wallAroundLadder.darker().darker());
+        }
+        else {
+            g.setColor(wallAroundLadder);
+        }
 
         g.fillRect(554,468,57,-100);
         g.fillRect(809,468,57,-100);
 
-        g.setColor(floorAroundLadder);
+        if (Lightning.light) {
+            g.setColor(floorAroundLadder.darker().darker());
+        }
+        else {
+            g.setColor(floorAroundLadder);
+        }
 
         g.fillRect(611,468,198,-100);
 
-        g.setColor(flagAroundLadder);
+        if (Lightning.light) {
+            g.setColor(flagAroundLadder.darker().darker());
+        }
+        else {
+            g.setColor(flagAroundLadder);
+        }
 
         g.fillRect(558,445,45,-80);
         g.fillRect(815,445,45,-80);
@@ -83,7 +119,13 @@ public class Castle extends Path2D.Float{
                        int startX, int startY, int rI, int rJ,
                        int mod, int space){
         Color washi = new Color(156, 146, 133); // washi - бумага в седзи
-        g.setColor(washi);
+
+        if (Lightning.light) {
+            g.setColor(washi.darker().darker());
+        }
+        else {
+            g.setColor(washi);
+        }
         for (int i = 0; i < rI; i++) {
             for (int j = 0; j < rJ; j++) {
                 if (i % mod == 0 && j == 0){
@@ -100,30 +142,59 @@ public class Castle extends Path2D.Float{
         Color pillar = new Color(167, 152, 137);
         Color roof = new Color(105,107,123);
 
-
-        g.setColor(mainWall);
+        if (Lightning.light) {
+            g.setColor(mainWall.darker().darker());
+        }
+        else {
+            g.setColor(mainWall);
+        }
         g.fillRect(300, 370, 781,-200);
 
-        g.setColor(framing);
+        if (Lightning.light) {
+            g.setColor(framing.darker().darker());
+        }
+        else {
+            g.setColor(framing);
+        }
         g.fillRect(384,347,607,-24);
         washi(g,8,5,388,342, 30, 3, 2,3);
         washi(g,8,5,751,342, 25, 3, 2,3);
 
-        g.setColor(framing);
+        if (Lightning.light) {
+            g.setColor(framing.darker().darker());
+        }
+        else {
+            g.setColor(framing);
+        }
         g.fillRect(384,265,607,-24);
         washi(g,8,5,388,260, 30, 3, 2,3);
         washi(g,8,5,751,260, 25, 3, 2,3);
 
-        g.setColor(framing);
+        if (Lightning.light) {
+            g.setColor(framing.darker().darker());
+        }
+        else {
+            g.setColor(framing);
+        }
         g.fillRect(384,235,607,-24);
         washi(g,8,5,388,230, 30, 3, 2,3);
         washi(g,8,5,751,230, 25, 3, 2,3);
 
-        g.setColor(framing);
+        if (Lightning.light) {
+            g.setColor(framing.darker().darker());
+        }
+        else {
+            g.setColor(framing);
+        }
         g.fillRect(682,370,59,-48);
         washi(g,8,5,681,364, 6, 8, 3, 5);
 
-        g.setColor(pillar); // pillars
+        if (Lightning.light) {
+            g.setColor(pillar.darker().darker());
+        }
+        else {
+            g.setColor(pillar);
+        }// pillars
 
         g.fillRect(746, 372, 6, -58); // two right pillars
         g.fillRect(760, 372, 6, -50);
@@ -132,28 +203,53 @@ public class Castle extends Path2D.Float{
         g.fillRect(657, 372, 6, -50);
 
         // roof
-        g.setColor(roof);
+        if (Lightning.light) {
+            g.setColor(roof.darker().darker());
+        }
+        else {
+            g.setColor(roof);
+        }
         g.fillRect(378, 345-24,280,-50);
         g.fillRect(557+154/2, 345-49,154/3,-75);
         g.fillRect(557+5*154/6, 345-49,154/3,-75);
         g.fillRect(557+7*154/6, 345-49,154/3,-75);
         g.fillRect(781, 345-24,300,-50);
 
-        g.setColor(pillar);
+        if (Lightning.light) {
+            g.setColor(pillar.darker().darker());
+        }
+        else {
+            g.setColor(pillar);
+        }
         g.fillRect(557+2*154/3, 345-27, (int) (154/1.75),-20);
         g.fillRect(557+8*154/9, 345-37, 154/4,-20);
 
-        g.setColor(roof);
+        if (Lightning.light) {
+            g.setColor(roof.darker().darker());
+        }
+        else {
+            g.setColor(roof);
+        }
         g.fill(roof(556, 316, 154,80,56));
         reset();
         g.fill(roof(220, 230, 491,60,76));
         reset();
 
-        g.setColor(pillar);
+        if (Lightning.light) {
+            g.setColor(pillar.darker().darker());
+        }
+        else {
+            g.setColor(pillar);
+        }
         g.fill(roof(557, 366,154,78,15));
         reset();
 
-        g.setColor(roof);
+        if (Lightning.light) {
+            g.setColor(roof.darker().darker());
+        }
+        else {
+            g.setColor(roof);
+        }
         g.fill(roof(557, 352,154,78,35));
         reset();
 
@@ -172,7 +268,12 @@ public class Castle extends Path2D.Float{
         Color fence = new Color(98, 101,106);
 
         // 823, 467
-        g.setColor(fence);
+        if (Lightning.light) {
+            g.setColor(fence.darker().darker());
+        }
+        else {
+            g.setColor(fence);
+        }
         g.fillRect(x,y,6,-21);
         g.setStroke(new BasicStroke(2));
         g.drawRect(x+6,y-14,72,13);
@@ -213,13 +314,20 @@ public class Castle extends Path2D.Float{
         Color wall2 = new Color(98,101,110);
         Color wall3 = new Color(106,106,115);
 
-        g.setColor(wall1);
+        if (Lightning.light) {g.setColor(wall1.darker().darker());}
+        else {g.setColor(wall1);}
         g.fillRect(x, y, w,h);
-        g.setColor(wall2);
+
+        if (Lightning.light) {g.setColor(wall2.darker().darker());}
+        else {g.setColor(wall2);}
         g.fillRect(x,y+h-1,w, (int) (h*2.5));
-        g.setColor(wall1);
+
+        if (Lightning.light) {g.setColor(wall1.darker().darker());}
+        else {g.setColor(wall1);}
         g.fillRect(x,y+h+h/4+1,w, h/6);
-        g.setColor(wall3);
+
+        if (Lightning.light) {g.setColor(wall3.darker().darker());}
+        else {g.setColor(wall3);}
         g.fillRect(x,y+h+h/4+h/6+h*2,w,h*15);
     }
 
@@ -252,7 +360,10 @@ public class Castle extends Path2D.Float{
         }
 
         Color fence = new Color(98, 101,106);
-        g.setColor(fence);
+
+        if (Lightning.light) {g.setColor(fence.darker().darker());}
+        else {g.setColor(fence);}
+
         g.fillPolygon(new int[]{676, 671, 607, 627, 676},
                 new int[]{446, 446, 634, 634, 468}, 5);
         g.fillPolygon(new int[]{747, 752, 806, 786, 747},
