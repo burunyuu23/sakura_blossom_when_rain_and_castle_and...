@@ -1,10 +1,11 @@
-package ru.vsu.edu.shlyikov_d_g.foreground;
+package ru.vsu.edu.shlyikov_d_g.foreground.animated_content;
 
 import java.awt.*;
 
 public class RedScarf {
 
     private final Color redScarf = new Color(149, 36, 36);
+    private int mult = 0;;
 
     private Polygon drawRedScarf(int startX, int startY,
                                         double multiplyX)
@@ -78,6 +79,21 @@ public class RedScarf {
         return new Polygon(xRedScarf1, yRedScarf1, xRedScarf1.length);
     }
 
+    private Polygon drawAnimation(int size, int startX,
+                                  int startY, int h){
+        int[] x = new int[size*2+1];
+        int[] y = new int[size*2+1];
+        for (int i = 0; i < size; i++) {
+            x[i]= startX - i;
+            y[i]= (int) (startY + (int)(3*Math.sin((i+mult/2)*0.1)) + i/1.3);
+            x[size*2-i]= startX - i;
+            y[size*2-i]= (int) (startY - h + (int)(3*Math.sin((i+mult/2)*0.1)) + i/1.3);
+        }
+        x[size] = startX - size - 1;
+        y[size] = (int) (startY - h + (int)(3*Math.sin((size+mult/2)*0.1)) + size/1.3);
+        return new Polygon(x, y, size*2+1);
+    }
+
 
     public void draw(Graphics2D g){
         Polygon p1 = drawRedScarf(1721,510);
@@ -97,6 +113,34 @@ public class RedScarf {
         g.rotate(2.52, 1800, 495);
         g.fillPolygon(p4);
         g.rotate(-2.52, 1800, 495);
+
+        g.fillPolygon(drawAnimation(110, 1715,
+                505, 35)); // сам шарф
+        g.fillPolygon(drawAnimation(10, 1605,
+                560, 2));
+        g.fillPolygon(drawAnimation(10, 1605,
+                563, 2));
+        g.fillPolygon(drawAnimation(10, 1605,
+                566, 2));
+        g.fillPolygon(drawAnimation(10, 1605,
+                569, 2));
+        g.fillPolygon(drawAnimation(10, 1605,
+                572, 2));
+        g.fillPolygon(drawAnimation(10, 1605,
+                575, 2));
+        g.fillPolygon(drawAnimation(10, 1605,
+                578, 2));
+        g.fillPolygon(drawAnimation(10, 1605,
+                581, 2));
+        g.fillPolygon(drawAnimation(10, 1605,
+                584, 2));
+
+        if (mult >= -7200) {
+            mult--;
+        }
+        else{
+            mult = 0;
+        }
     }
 
 }

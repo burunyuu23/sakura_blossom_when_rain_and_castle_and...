@@ -1,13 +1,13 @@
 package ru.vsu.edu.shlyikov_d_g;
 
 import ru.vsu.edu.shlyikov_d_g.background.Castle;
-import ru.vsu.edu.shlyikov_d_g.background.Ground;
-import ru.vsu.edu.shlyikov_d_g.background.Rain;
+import ru.vsu.edu.shlyikov_d_g.foreground.static_content.Ground;
+import ru.vsu.edu.shlyikov_d_g.foreground.animated_content.rain.Rain;
 import ru.vsu.edu.shlyikov_d_g.background.Sky;
-import ru.vsu.edu.shlyikov_d_g.foreground.RedScarf;
-import ru.vsu.edu.shlyikov_d_g.foreground.SakuraLeaf;
-import ru.vsu.edu.shlyikov_d_g.foreground.Torii;
-import ru.vsu.edu.shlyikov_d_g.foreground.Trees;
+import ru.vsu.edu.shlyikov_d_g.foreground.animated_content.RedScarf;
+import ru.vsu.edu.shlyikov_d_g.foreground.animated_content.SakuraLeaf;
+import ru.vsu.edu.shlyikov_d_g.foreground.static_content.Torii;
+import ru.vsu.edu.shlyikov_d_g.foreground.static_content.Trees;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,7 +27,7 @@ public class DrawPanel extends JPanel implements ActionListener {
     Sky sky = new Sky();
     Torii torii = new Torii();
     Rain rain = new Rain();
-    Timer t = new Timer(15, this);
+    Timer t = new Timer(15, this); //15
 
     @Override
     public void paint(Graphics gr) {

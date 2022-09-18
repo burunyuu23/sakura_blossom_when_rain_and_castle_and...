@@ -1,4 +1,4 @@
-package ru.vsu.edu.shlyikov_d_g.foreground;
+package ru.vsu.edu.shlyikov_d_g.foreground.static_content;
 
 import java.awt.*;
 

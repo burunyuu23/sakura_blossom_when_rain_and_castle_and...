@@ -1,8 +1,7 @@
-package ru.vsu.edu.shlyikov_d_g.background;
+package ru.vsu.edu.shlyikov_d_g.foreground.animated_content.rain;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Raindrop {
     private int x;
@@ -38,6 +37,11 @@ public class Raindrop {
         x = (int) (Math.random() * 1925);
         y = (int) (Math.random() * 786 - 5);
         w = (int) (Math.random() * 9 + 2);
+    }
+
+    public boolean isCollide(Puddle p){
+        return (x < p.getX() + 3*p.getW()/4 && x > p.getX() + p.getW()/4 &&
+                y > p.getY() + p.getH()/4 && y < p.getY() + 3*p.getH()/4);
     }
 
     public boolean isEmpty(){
