@@ -5,20 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Rain {
-    List<Puddle> p = new ArrayList<>();
     List<Gurgle> listGurgle = new ArrayList<>();
-
-    {
-        p.add(new Puddle(579,764,88,22));
-        p.add(new Puddle(683,766,136,34));
-        p.add(new Puddle(282,756,64,16));
-    }
+    private List<Puddle> p;
 
     List<Raindrop> rains;
     Color rainC;
     {
         rainC = new Color(75,182,184);
         rains = Raindrop.create(750);
+    }
+
+    public Rain(List<Puddle> p) {
+        this.p = p;
     }
 
     private void rain(Graphics2D g, List<Raindrop> rs) {
@@ -51,9 +49,6 @@ public class Rain {
     }
 
     public void draw (Graphics2D g){
-        for (Puddle pi:p) {
-            pi.draw(g);
-        }
         rain(g, rains);
     }
 }

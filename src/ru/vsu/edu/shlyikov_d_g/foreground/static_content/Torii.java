@@ -6,14 +6,16 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 
 public class Torii {
+    Color torii = new Color(149,36,36);
 
     private void torii(Graphics2D g, int x1, int y1,
-                       int x2, int y2, int h){
-        Color torii = new Color(149,36,36);
+                       int x2, int y2, int h, Color torii){
 
         g.setColor(Lightning.changeColor(torii));
-        g.fillRect(x1,y1-h,15,h);
-        g.fillRect(x2,y2-h,15,h);
+        g.fillPolygon(new int[]{x1, x1+15, x1+15, x1},
+                new int[]{y1-h,y1-h,y1-h/10, y1},4);
+        g.fillPolygon(new int[]{x2, x2+15, x2+15, x2},
+                new int[]{y2-h,y2-h,y2-h/10, y2},4);
 
         g.fillPolygon(new int[]{x1-Math.abs(x2-x1)/2, x1-Math.abs(x2-x1)/2,
                         (int) (x2+Math.abs(x2-x1)/1.35), (int) (x2+Math.abs(x2-x1)/1.35)},
@@ -32,10 +34,10 @@ public class Torii {
                 new int[]{(int) (y1-Math.abs(y2-y1)-h/2.2), (int) (y1-Math.abs(y1-y2)-h/1.8),
                         (int) (y2-Math.abs(y2-y1)-h/1.1), (int) (y2-Math.abs(y1-y2)-h/1.2)},4);
 
-        g.fillPolygon(new int[]{(int) (x1+Math.abs(x2-x1)/1.7), (int) (x1+Math.abs(x2-x1)/1.7),
+        g.fillPolygon(new int[]{(int) (x1+Math.abs(x2-x1)/2.1), (int) (x1+Math.abs(x2-x1)/2.1),
                         (int) (x2-Math.abs(x2-x1)/7.5), (int) (x2-Math.abs(x2-x1)/7.5)},
-                new int[]{(int) (y1-Math.abs(y2-y1)-h/1.45), (int) (y1-Math.abs(y1-y2)-h/2.15),
-                        (int) (y2-Math.abs(y2-y1)-h/5.05), (int) (y2-Math.abs(y1-y2)-h/2.45)},4);
+                new int[]{(int) (y1-Math.abs(y2-y1)-h/1.6), (int) (y1-Math.abs(y1-y2)-h/1.9),
+                        (int) (y2-Math.abs(y2-y1)-h/4.25), (int) (y2-Math.abs(y1-y2)-h/2.95)},4);
     }
 
 //
@@ -46,14 +48,23 @@ public class Torii {
 //
 //        }
 
+    private void torii3D(Graphics2D g, int x1,int y1,int x2,int y2,int h){
+        Color c = torii.darker();
+        for (int i = 0; i < 7; i++) {
+            if (i == 6) c = torii;
+            torii(g, x1-6+2*i-10,y1+10,x2-6+2*i+15,y2,h, c);
+        }
+    }
+
     public void draw(Graphics2D g){
-        torii(g, -18,819,30,748,185);
-        torii(g, 58,813,100,748,180);
-        torii(g, 128,812,170,743,175);
-        torii(g, 188,807,230,743,170);
-        torii(g, 270,805,307,743,165);
-        torii(g, 353,803,390,745,160);
-        torii(g, 435,798,465,744,155);
-        torii(g, 520,802,550,748,150); // diff x=30 ; diff y=-54
+        torii3D(g, -18,809,30,733,185);
+        torii3D(g, 68,808,110,738,180);
+        torii3D(g, 148,802,190,738,175);
+        torii3D(g, 218,802,260,738,170);
+
+        torii3D(g, 360,805,397,743,165);
+        torii3D(g, 423,803,460,745,160);
+        torii3D(g, 500,798,530,744,155);
+        torii3D(g, 580,802,610,748,150); // diff x=30 ; diff y=-54
     }
 }
