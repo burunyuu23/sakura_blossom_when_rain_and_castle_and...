@@ -5,7 +5,12 @@ in the end lyrics
 
 что анимировано:
 > Дождь!
+> 
 > > Лужи (капли при попадании вызывают бульк)
-> Молния
-> >>Шарф (очень красиво :white_check_mark::white_check_mark::white_check_mark: там верхний с нитками, а нижний как будто 3д!!!)
-> >Листочки сакуры (AAAaa WOW! i love watch *sakura leafs*! i already feel SMARTER and more AWARE!)
+> > 
+>Молния
+>
+> > >Шарф (очень красиво :white_check_mark::white_check_mark::white_check_mark: там верхний с нитками, а нижний как будто 3д!!!)
+> > >
+> > Листочки сакуры (AAAaa WOW! i love watch *sakura leafs*! i already feel SMARTER and more AWARE!)
+> > 
