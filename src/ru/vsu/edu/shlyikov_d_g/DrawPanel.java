@@ -50,9 +50,11 @@ public class DrawPanel extends JPanel implements ActionListener {
         castle.draw(g);
         ground.draw(g);
         trees.draw(g);
+
         for (Puddle pi:p) {
             pi.draw(g);
         }
+
         torii.draw(g);
         redScarf.draw(g); //anim
         sakuraLeaf.draw(g); //anim
