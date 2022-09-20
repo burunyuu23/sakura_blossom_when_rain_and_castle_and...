@@ -32,9 +32,9 @@ public class DrawPanel extends JPanel implements ActionListener {
     Lightning lightning = new Lightning();
     java.util.List<Puddle> p = new ArrayList<>();
     {
-        p.add(new Puddle(579,764,88,22));
-        p.add(new Puddle(683,766,136,34));
-        p.add(new Puddle(282,756,64,16));
+        p.add(new Puddle(589,764,88,22));
+        p.add(new Puddle(693,766,136,34));
+        p.add(new Puddle(270,756,64,16));
     }
 
     Rain rain = new Rain(p);
