@@ -70,6 +70,15 @@ public class Lightning extends Path2D.Float {
         return this;
     }
 
+    public static Color changeColor(Color c){
+        if (Lightning.light) {
+            return c.darker().darker();
+        }
+        else{
+            return c;
+        }
+    }
+
     public void draw(Graphics2D g){
         counter++;
         if (counter > maxCounter){

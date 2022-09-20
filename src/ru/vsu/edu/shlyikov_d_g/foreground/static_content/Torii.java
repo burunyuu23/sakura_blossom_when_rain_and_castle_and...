@@ -10,12 +10,8 @@ public class Torii {
     private void torii(Graphics2D g, int x1, int y1,
                        int x2, int y2, int h){
         Color torii = new Color(149,36,36);
-        if (Lightning.light) {
-            g.setColor(torii.darker().darker());
-        }
-        else{
-            g.setColor(torii);
-        }
+
+        g.setColor(Lightning.changeColor(torii));
         g.fillRect(x1,y1-h,15,h);
         g.fillRect(x2,y2-h,15,h);
 

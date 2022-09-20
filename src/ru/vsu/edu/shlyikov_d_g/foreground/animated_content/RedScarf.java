@@ -65,12 +65,8 @@ public class RedScarf {
         Polygon p3 = drawRedScarf(1797,469);
         Polygon p4 = drawRedScarf(1800,495,1.3,2.77);
 
-        if (Lightning.light) {
-            g.setColor(redScarf.darker().darker());
-        }
-        else{
-            g.setColor(redScarf);
-        }
+
+        g.setColor(Lightning.changeColor(redScarf));
 
         g.fillPolygon(p1);
         g.rotate(0.2, 1766, 490);

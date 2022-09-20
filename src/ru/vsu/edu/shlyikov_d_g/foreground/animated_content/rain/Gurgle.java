@@ -10,7 +10,6 @@ public class Gurgle {
     int red = 103; // -28
     int blue = 210; // -28
     int green = 212; // -28
-    Color gurgleCW = new Color(75,182,184);
 
     public Gurgle(int x, int y){
         this.x = x;
@@ -31,12 +30,8 @@ public class Gurgle {
 
     public void draw(Graphics2D g){
         Color gurgleC = new Color(red,blue,green);
-        if (Lightning.light) {
-            g.setColor(gurgleC.darker().darker());
-        }
-        else{
-            g.setColor(gurgleC);
-        }
+
+        g.setColor(Lightning.changeColor(gurgleC));
         g.drawLine(x, y, x, y-h);
         g.drawOval(x-(36-w)/2,y, 36-w,4);
         move();

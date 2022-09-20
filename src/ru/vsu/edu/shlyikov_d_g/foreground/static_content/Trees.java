@@ -53,12 +53,8 @@ public class Trees {
         Polygon tree1 = new Polygon(xTree1, yTree1, xTree1.length);
         Polygon tree2 = new Polygon(xTree2, yTree2, xTree2.length);
         Color treeColor = new Color(104, 63, 21);
-        if (Lightning.light) {
-            g.setColor(treeColor.darker().darker());
-        }
-        else {
-            g.setColor(treeColor);
-        }
+
+        g.setColor(Lightning.changeColor(treeColor));
         g.fillPolygon(tree1);
         g.fillPolygon(tree2);
     }

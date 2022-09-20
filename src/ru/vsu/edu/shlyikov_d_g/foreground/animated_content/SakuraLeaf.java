@@ -80,12 +80,8 @@ public class SakuraLeaf {
     }
 
     public void draw(Graphics2D g){
-        if (Lightning.light) {
-            g.setColor(sakuraLeafColor.darker().darker());
-        }
-        else{
-            g.setColor(sakuraLeafColor);
-        }
+
+        g.setColor(Lightning.changeColor(sakuraLeafColor));
 
         if (!start){
             start = true;

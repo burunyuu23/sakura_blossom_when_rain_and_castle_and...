@@ -39,21 +39,11 @@ public class Ground extends Path2D.Float {
         Color ground = new Color(77,30,91);
         Color road = new Color(138,138,138);
 
-        if (Lightning.light) {
-            g.setColor(ground.darker().darker());
-        }
-        else{
-            g.setColor(ground);
-        }
+        g.setColor(Lightning.changeColor(ground));
         g.fill(ground());
         reset();
 
-        if (Lightning.light) {
-            g.setColor(road.darker().darker());
-        }
-        else{
-            g.setColor(road);
-        }
+        g.setColor(Lightning.changeColor(road));
         g.fill(road());
     }
 
