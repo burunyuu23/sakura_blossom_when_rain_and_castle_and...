@@ -45,16 +45,23 @@ public class DrawPanel extends JPanel implements ActionListener {
     public void paint(Graphics gr) {
         super.paint(gr);
         Graphics2D g = (Graphics2D) gr;
+
+//        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+//                RenderingHints.VALUE_ANTIALIAS_ON);
+
+            // антиаляйсинх НЕ ВЛЕЗАЙ УБЬЁТ!
+        // МНОГИЕ ЛЮДИ ПЫТАЛИСЬ ПРОНИКНУТЬ НА ТЕРРИТОРИЮ ДРАКОНОВ
+        // НО НИКТО НЕ ВЕРНУЛСЯ ЖИВЫМ
+        // ПУТНИК, ТЫ БЫЛ ПРЕДУПРЕЖДЁН
+
         sky.draw(g);
         lightning.draw(g);
         castle.draw(g);
         ground.draw(g);
         trees.draw(g);
-
         for (Puddle pi:p) {
             pi.draw(g);
         }
-
         torii.draw(g);
         redScarf.draw(g); //anim
         sakuraLeaf.draw(g); //anim

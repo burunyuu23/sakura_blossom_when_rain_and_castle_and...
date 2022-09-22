@@ -12,42 +12,25 @@ public class Castle extends Path2D.Float{
 
     private void ladderStep(Graphics2D g, int x, int y, int width){
         // 710, 448
-        if (Lightning.light) {
-            g.setColor(ladderStep1.darker().darker());
-        }
-        else {
-            g.setColor(ladderStep1);
-        }
-        g.fillRect(x,y,-width,-3);
-        g.fillRect(x,y,width,-3);
-        if (Lightning.light) {
-            g.setColor(ladderStep2.darker().darker());
-        }
-        else {
-            g.setColor(ladderStep2);
-        }
-        g.fillRect(x,y-3,width,-1);
-        g.fillRect(x,y-3,-width,-1);
+        g.setColor(Lightning.changeColor(ladderStep1));
+        g.fillRect(x,y-3,width,3);
+        g.fillRect(x-width,y-3,width,3);
+
+        g.setColor(Lightning.changeColor(ladderStep2));
+        g.fillRect(x,y-3-1,width,1);
+        g.fillRect(x-width,y-3-1,width,1);
     }
 
     private void flag(Graphics2D g, int x, int y, int w, int h, int x2, int y2, int size,
                       Color flagSign, Color flagBackSign) {
         g.setFont(new Font("Algerian", Font.PLAIN, size));
 
-        if (Lightning.light) {
-            g.setColor(flagBackSign.darker().darker());
-        }
-        else {
-            g.setColor(flagBackSign);
-        }
+
+        g.setColor(Lightning.changeColor(flagBackSign));
         g.fillOval(x,y,w,h);
         // 562, 387, 35, 35
-        if (Lightning.light) {
-            g.setColor(flagSign.darker().darker());
-        }
-        else {
-            g.setColor(flagSign);
-        }
+
+        g.setColor(Lightning.changeColor(flagSign));
         g.drawString("¤",x2, y2);
     }
 
@@ -62,17 +45,17 @@ public class Castle extends Path2D.Float{
 
         g.setColor(Lightning.changeColor(wallAroundLadder));
 
-        g.fillRect(554,468,57,-100);
-        g.fillRect(809,468,57,-100);
+        g.fillRect(554,468-100,57,100);
+        g.fillRect(809,468-100,57,100);
 
         g.setColor(Lightning.changeColor(floorAroundLadder));
 
-        g.fillRect(611,468,198,-100);
+        g.fillRect(611,468-100,198,100);
 
         g.setColor(Lightning.changeColor(flagAroundLadder));
 
-        g.fillRect(558,445,45,-80);
-        g.fillRect(815,445,45,-80);
+        g.fillRect(558,445-80,45,80);
+        g.fillRect(815,445-80,45,80);
 
         flag(g, 562, 387, 35, 35, 565,420,50);
         g.rotate(Math.PI,854,389);
@@ -80,7 +63,7 @@ public class Castle extends Path2D.Float{
         g.rotate(-Math.PI,854,389);
 
         for (int i = 0; i < 25; i++) {
-            ladderStep(g, 710,468 - i*4, 99-2*i);
+            ladderStep(g, 710,465 - i*4, 99-2*i);
         }
     }
 
@@ -111,7 +94,7 @@ public class Castle extends Path2D.Float{
                 if (i % mod == 0 && j == 0){
                     startX += space;
                 }
-                g.fillRect(startX+mI*i,startY-mJ*j,6,-3);
+                g.fillRect(startX+mI*i,startY-mJ*j-3,6,3);
             }
         }
     }
@@ -123,46 +106,46 @@ public class Castle extends Path2D.Float{
         Color roof = new Color(105,107,123);
 
         g.setColor(Lightning.changeColor(mainWall));
-        g.fillRect(300, 370, 781,-200);
+        g.fillRect(300, 370-200, 781,200);
 
         g.setColor(Lightning.changeColor(framing));
-        g.fillRect(384,347,607,-24);
+        g.fillRect(384,347-24,607,24);
         washi(g,8,5,388,342, 30, 3, 2,3);
         washi(g,8,5,751,342, 25, 3, 2,3);
 
         g.setColor(Lightning.changeColor(framing));
-        g.fillRect(384,265,607,-24);
+        g.fillRect(384,265-24,607,24);
         washi(g,8,5,388,260, 30, 3, 2,3);
         washi(g,8,5,751,260, 25, 3, 2,3);
 
         g.setColor(Lightning.changeColor(framing));
-        g.fillRect(384,235,607,-24);
+        g.fillRect(384,235-24,607,24);
         washi(g,8,5,388,230, 30, 3, 2,3);
         washi(g,8,5,751,230, 25, 3, 2,3);
 
         g.setColor(Lightning.changeColor(framing));
-        g.fillRect(682,370,59,-48);
+        g.fillRect(682,370-48,59,48);
         washi(g,8,5,681,364, 6, 8, 3, 5);
 
         g.setColor(Lightning.changeColor(pillar));// pillars
 
-        g.fillRect(746, 372, 6, -58); // two right pillars
-        g.fillRect(760, 372, 6, -50);
+        g.fillRect(746, 372-58, 6, 58); // two right pillars
+        g.fillRect(760, 372-50, 6, 50);
 
-        g.fillRect(671, 372, 6, -58); // two left pillars
-        g.fillRect(657, 372, 6, -50);
+        g.fillRect(671, 372-58, 6, 58); // two left pillars
+        g.fillRect(657, 372-50, 6, 50);
 
         // roof
         g.setColor(Lightning.changeColor(roof));
-        g.fillRect(378, 345-24,280,-50);
-        g.fillRect(557+154/2, 345-49,154/3,-75);
-        g.fillRect(557+5*154/6, 345-49,154/3,-75);
-        g.fillRect(557+7*154/6, 345-49,154/3,-75);
-        g.fillRect(781, 345-24,300,-50);
+        g.fillRect(378, 345-24-50,280,50);
+        g.fillRect(557+154/2, 345-49-75,154/3,75);
+        g.fillRect(557+5*154/6, 345-49-75,154/3,75);
+        g.fillRect(557+7*154/6, 345-49-75,154/3,75);
+        g.fillRect(781, 345-24-50,300-50,50);
 
         g.setColor(Lightning.changeColor(pillar));
-        g.fillRect(557+2*154/3, 345-27, (int) (154/1.75),-20);
-        g.fillRect(557+8*154/9, 345-37, 154/4,-20);
+        g.fillRect(557+2*154/3, 345-27-20, (int) (154/1.75),20);
+        g.fillRect(557+8*154/9, 345-37-20, 154/4,20);
 
         g.setColor(Lightning.changeColor(roof));
         g.fill(roof(556, 316, 154,80,56));
@@ -175,7 +158,7 @@ public class Castle extends Path2D.Float{
         reset();
 
         g.setColor(Lightning.changeColor(roof));
-        g.fill(roof(557, 352,154,78,35));
+        g.fill(roof(557, 350,154,78,35));
         reset();
 
         flag(g, 697,287,28,28,700,314,40,
@@ -194,7 +177,7 @@ public class Castle extends Path2D.Float{
 
         // 823, 467
         g.setColor(Lightning.changeColor(fence));
-        g.fillRect(x,y,6,-21);
+        g.fillRect(x,y,6,21);
         g.setStroke(new BasicStroke(2));
         g.drawRect(x+6,y-14,72,13);
 
@@ -251,25 +234,25 @@ public class Castle extends Path2D.Float{
 //        wall(g,293,469,450,388);
         frontHouseWall(g);
 
-        fence(g, -56, 360,8,76);
+        fence(g, -14, 360,8,70);
         wall(g,0,360,555,23);
 
-        fence(g, 860, 360,25,76);
+        fence(g, 860, 360,25,71);
         wall(g,860,360,1222,23);
 
         g.rotate(-0.35,0,658);
         wall(g,0,656,555,19);
-        fence(g, -16, 658,8,71);
+        fence(g, -33, 658,9,65);
         g.rotate(0.35,0,658);
 
         wall(g,877,460,1222,20);
-        fence(g, 877, 460,25,76);
+        fence(g, 877, 460,25,70);
 
         ladder(g);
 
         wall(g,519,467,380,20);
-        fence(g, 519, 467,2,76);
-        fence(g, 747, 467,2,76);
+        fence(g, 519, 467,2,70);
+        fence(g, 747, 467,2,70);
 
         for (int i = 0; i < 45; i++) {
             ladderStep(g, 709, 472 + i*4, 38+i);
